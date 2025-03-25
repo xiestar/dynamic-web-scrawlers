@@ -1,0 +1,9 @@
+{
+    "cookies": "_zap=88c2481f-51b4-4201-a30e-0bf47ebe39f0; d_c0=4LUTMZoqMxqPTshY3XR6qREJKXcQRbRiZrE=|1742890318; captcha_session_v2=2|1:0|10:1742890319|18:captcha_session_v2|88:NmM1V2d5ekxzQitjMm8xS3FIeGluSlkwYThadHhOTHFoalY5ZWQ4cGRzMnZ2UVI5RHZRZ2tYVlVVeU9oOWVEbg==|e54b7c711b88c9a860a8917441a042922df37c371cca9dc3fdace384a675efc6; __snaker__id=pUMb2U6ySn88Xz0w; gdxidpyhxdE=xZqiNQ46UjKRjgPjMEu1x8Yh%2FTm4hp1i4f7xH%2BOZu%2F%2Fc9yX6svDht0%2BiiZ5uJzhiaWjL1EDQavywtYESQSAT%5CxsUngpl0AOy6LD8dkGZiUCaax5poGYoWcMQYqqR6JxBmYC2VxpiOmIwkjH1a%5CYSqjZwdl5SooJ%2F3GCIhgqB1o50%2FzRg%3A1742891243661; z_c0=2|1:0|10:1742890375|4:z_c0|92:Mi4xRlV2OUFBQUFBQURndFJNeG1pb3pHaVlBQUFCZ0FsVk5oTFBQYUFCcUFwa3FSOWpJTjJ1OVhsdjRzLVVtaU52M29B|886f03c17ba179c5dbc64e52a8cf3267b23ac56b52e6ea60da304a4b9d74b8b3; _xsrf=7fafaa42-923c-47ab-821e-e7baea2dbf28; SUBMIT_0=0903db18-2ed4-4cb7-9603-766f16fe6668; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1742890320,1742905646; HMACCOUNT=84C1C0ABAF3D85CA; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1742905997; BEC=46faae78ffea44ab7c29d705bdab5c18",
+    "scrape_count": 20,
+    "scrape_interval": 3600,
+    "scroll_interval": 1000,
+    "scroll_count": 3,
+    "database_path": "database/zhihu_hot_questions.db",
+    "visible_mode": true
+}

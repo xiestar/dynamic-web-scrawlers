@@ -1,0 +1,744 @@
+2025-03-25 21:06:40,694 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 21:06:41,033 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 21:06:41,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 21:06:41,058 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 21:08:41,521 - INFO - 192.168.5.23 - - [25/Mar/2025 21:08:41] "GET / HTTP/1.1" 200 -
+2025-03-25 21:08:43,584 - INFO - 192.168.5.23 - - [25/Mar/2025 21:08:43] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 21:08:43,585 - ERROR - »ñÈ¡ÎÊÌâÁÐ±íÊ§°Ü: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 1288 and this is thread id 14528.
+2025-03-25 21:08:43,586 - ERROR - Exception on /api/status [GET]
+Traceback (most recent call last):
+  File "D:\workspace\dynamic-web-scrawlers\database\__init__.py", line 100, in get_questions
+    self.cursor.execute('''
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 1288 and this is thread id 14528.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\dynamic-web-scrawlers\web\routes.py", line 81, in get_status
+    questions = db.get_questions(limit=1)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\workspace\dynamic-web-scrawlers\database\__init__.py", line 110, in get_questions
+    self.close()
+  File "D:\workspace\dynamic-web-scrawlers\database\__init__.py", line 56, in close
+    self.conn.close()
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 1288 and this is thread id 14528.
+2025-03-25 21:08:43,589 - INFO - 192.168.5.23 - - [25/Mar/2025 21:08:43] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:08:43,615 - INFO - 192.168.5.23 - - [25/Mar/2025 21:08:43] "[35m[1mGET /api/status HTTP/1.1[0m" 500 -
+2025-03-25 21:08:46,481 - INFO - 192.168.5.23 - - [25/Mar/2025 21:08:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-25 21:11:06,246 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 21:11:06,467 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 21:11:06,483 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 21:11:06,484 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 21:11:53,312 - INFO - 127.0.0.1 - - [25/Mar/2025 21:11:53] "GET / HTTP/1.1" 200 -
+2025-03-25 21:11:55,152 - INFO - 127.0.0.1 - - [25/Mar/2025 21:11:55] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 21:11:55,153 - INFO - 127.0.0.1 - - [25/Mar/2025 21:11:55] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:11:55,154 - INFO - 127.0.0.1 - - [25/Mar/2025 21:11:55] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 21:11:57,208 - INFO - 127.0.0.1 - - [25/Mar/2025 21:11:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-25 21:12:12,100 - INFO - 192.168.5.23 - - [25/Mar/2025 21:12:12] "GET / HTTP/1.1" 200 -
+2025-03-25 21:12:12,185 - INFO - 192.168.5.23 - - [25/Mar/2025 21:12:12] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:12:12,186 - INFO - 192.168.5.23 - - [25/Mar/2025 21:12:12] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 21:12:12,189 - INFO - 192.168.5.23 - - [25/Mar/2025 21:12:12] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 21:15:13,838 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 21:15:13,839 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 21:15:13.839964
+2025-03-25 21:15:13,840 - INFO - ¿ªÊ¼ÅÀÈ¡ÖªºõÈÈµãÎÊÌâ
+2025-03-25 21:15:14,780 - INFO - ÉèÖÃ 12 ¸öcookies
+2025-03-25 21:15:15,036 - INFO - µ¼º½µ½ https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 21:15:20,258 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\initial_page.png
+2025-03-25 21:15:20,284 - INFO - ¼ì²âµ½ÒÑµÇÂ¼×´Ì¬
+2025-03-25 21:15:20,285 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .CreatorHomeLayout-mainColumn
+2025-03-25 21:15:23,295 - WARNING - Ñ¡ÔñÆ÷ .CreatorHomeLayout-mainColumn Î´ÕÒµ½: Page.wait_for_selector: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator(".CreatorHomeLayout-mainColumn") to be visible
+
+2025-03-25 21:15:23,296 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .HotList-list
+2025-03-25 21:15:26,301 - WARNING - Ñ¡ÔñÆ÷ .HotList-list Î´ÕÒµ½: Page.wait_for_selector: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator(".HotList-list") to be visible
+
+2025-03-25 21:15:26,302 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .HotQuestions
+2025-03-25 21:15:29,311 - WARNING - Ñ¡ÔñÆ÷ .HotQuestions Î´ÕÒµ½: Page.wait_for_selector: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator(".HotQuestions") to be visible
+
+2025-03-25 21:15:29,313 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .CreatorHotQuestionCard
+2025-03-25 21:15:32,323 - WARNING - Ñ¡ÔñÆ÷ .CreatorHotQuestionCard Î´ÕÒµ½: Page.wait_for_selector: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator(".CreatorHotQuestionCard") to be visible
+
+2025-03-25 21:15:32,324 - INFO - Ò³Ãæ¼ÓÔØÍê³É
+2025-03-25 21:15:33,333 - INFO - Ò³Ãæ¹ö¶¯ 1/3
+2025-03-25 21:15:33,439 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_1.png
+2025-03-25 21:15:34,453 - INFO - Ò³Ãæ¹ö¶¯ 2/3
+2025-03-25 21:15:34,574 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_2.png
+2025-03-25 21:15:35,588 - INFO - Ò³Ãæ¹ö¶¯ 3/3
+2025-03-25 21:15:35,695 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_3.png
+2025-03-25 21:15:35,695 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .CreatorHotQuestionCard
+2025-03-25 21:15:35,701 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .HotItem
+2025-03-25 21:15:35,707 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .HotList-item
+2025-03-25 21:15:35,714 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .Card
+2025-03-25 21:15:35,720 - ERROR - Î´ÕÒµ½ÈÎºÎÎÊÌâ¿¨Æ¬
+2025-03-25 21:15:35,835 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\no_cards_found.png
+2025-03-25 21:15:35,835 - INFO - ³¢ÊÔ¼ì²éÒ³ÃæÉÏµÄ»ù±¾ÔªËØ...
+2025-03-25 21:15:35,856 - INFO - BodyÎÄ±¾Æ¬¶Î: ½øÈëÖªºõ
+
+ÏµÍ³¼à²âµ½ÄúµÄÍøÂç»·¾³´æÔÚÒì³££¬Çëµã»÷ÏÂ·½ÑéÖ¤°´Å¥½øÐÐÑéÖ¤¡£ÔÚÄúÑéÖ¤Íê³ÉÇ°£¬¸ÃÌáÊ¾½«¶à´Î³öÏÖ¡£
+
+¿ªÊ¼ÑéÖ¤
+Òâ¼û·´À¡
+ÕýÔÚ¼ÓÔØ£¬ÇëÉÔºóÖØÊÔ
+ÕýÔÚ¼ÓÔØ£¬ÇëÉÔºóÖØÊÔ...
+2025-03-25 21:15:35,857 - INFO - ÅÀÈ¡Íê³É£¬¹²»ñÈ¡ 0 ¸öÎÊÌâ
+2025-03-25 21:15:36,392 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 21:27:41,804 - INFO - 127.0.0.1 - - [25/Mar/2025 21:27:41] "GET / HTTP/1.1" 200 -
+2025-03-25 21:27:42,151 - INFO - 127.0.0.1 - - [25/Mar/2025 21:27:42] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:27:42,153 - INFO - 127.0.0.1 - - [25/Mar/2025 21:27:42] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 21:27:42,153 - INFO - 127.0.0.1 - - [25/Mar/2025 21:27:42] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 21:44:59,668 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 21:44:59,669 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 21:44:59.669225
+2025-03-25 21:44:59,670 - INFO - ¿ªÊ¼ÅÀÈ¡ÖªºõÈÈµãÎÊÌâ
+2025-03-25 21:45:00,661 - INFO - ÉèÖÃ 12 ¸öcookies
+2025-03-25 21:45:01,167 - INFO - µ¼º½µ½ https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 21:45:04,005 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\initial_page.png
+2025-03-25 21:45:04,030 - INFO - ¼ì²âµ½ÒÑµÇÂ¼×´Ì¬
+2025-03-25 21:45:04,031 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .css-vurnku
+2025-03-25 21:45:09,047 - WARNING - Ñ¡ÔñÆ÷ .css-vurnku Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".css-vurnku") to be visible
+
+2025-03-25 21:45:09,047 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .css-1fd22oq
+2025-03-25 21:45:14,055 - WARNING - Ñ¡ÔñÆ÷ .css-1fd22oq Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".css-1fd22oq") to be visible
+
+2025-03-25 21:45:14,055 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .CreatorHomeLayout-mainColumn
+2025-03-25 21:45:19,074 - WARNING - Ñ¡ÔñÆ÷ .CreatorHomeLayout-mainColumn Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".CreatorHomeLayout-mainColumn") to be visible
+
+2025-03-25 21:45:19,075 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .HotQuestions
+2025-03-25 21:45:24,091 - WARNING - Ñ¡ÔñÆ÷ .HotQuestions Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".HotQuestions") to be visible
+
+2025-03-25 21:45:24,091 - INFO - Ò³Ãæ¼ÓÔØÍê³É
+2025-03-25 21:45:25,111 - INFO - Ò³Ãæ¹ö¶¯ 1/3
+2025-03-25 21:45:25,218 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_1.png
+2025-03-25 21:45:26,222 - INFO - Ò³Ãæ¹ö¶¯ 2/3
+2025-03-25 21:45:26,330 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_2.png
+2025-03-25 21:45:27,341 - INFO - Ò³Ãæ¹ö¶¯ 3/3
+2025-03-25 21:45:27,450 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_3.png
+2025-03-25 21:45:27,450 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .css-vurnku > .css-1fd22oq
+2025-03-25 21:45:27,456 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .CreatorHotQuestionCard
+2025-03-25 21:45:27,462 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .HotItem
+2025-03-25 21:45:27,468 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .Card
+2025-03-25 21:45:27,473 - ERROR - Î´ÕÒµ½ÈÎºÎÎÊÌâ¿¨Æ¬
+2025-03-25 21:45:27,585 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\no_cards_found.png
+2025-03-25 21:45:27,585 - INFO - ³¢ÊÔ¼ì²éÒ³ÃæÉÏµÄ»ù±¾ÔªËØ...
+2025-03-25 21:45:27,604 - INFO - BodyÎÄ±¾Æ¬¶Î: ½øÈëÖªºõ
+
+ÏµÍ³¼à²âµ½ÄúµÄÍøÂç»·¾³´æÔÚÒì³££¬Çëµã»÷ÏÂ·½ÑéÖ¤°´Å¥½øÐÐÑéÖ¤¡£ÔÚÄúÑéÖ¤Íê³ÉÇ°£¬¸ÃÌáÊ¾½«¶à´Î³öÏÖ¡£
+
+¿ªÊ¼ÑéÖ¤
+Òâ¼û·´À¡...
+2025-03-25 21:45:27,605 - INFO - ÅÀÈ¡Íê³É£¬¹²»ñÈ¡ 0 ¸öÎÊÌâ
+2025-03-25 21:45:28,130 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 21:46:47,038 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 21:46:47,233 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 21:46:47,250 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 21:46:47,251 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 21:47:40,896 - INFO - 127.0.0.1 - - [25/Mar/2025 21:47:40] "GET / HTTP/1.1" 200 -
+2025-03-25 21:47:40,927 - INFO - 127.0.0.1 - - [25/Mar/2025 21:47:40] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:47:40,933 - INFO - 127.0.0.1 - - [25/Mar/2025 21:47:40] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 21:47:40,934 - INFO - 127.0.0.1 - - [25/Mar/2025 21:47:40] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 21:48:43,351 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 21:48:43,352 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 21:48:43.352684
+2025-03-25 21:48:43,352 - INFO - ¿ªÊ¼ÅÀÈ¡ÖªºõÈÈµãÎÊÌâ
+2025-03-25 21:48:44,282 - INFO - ÉèÖÃ 12 ¸öcookies
+2025-03-25 21:48:44,550 - INFO - µ¼º½µ½ https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 21:48:49,567 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\initial_page.png
+2025-03-25 21:48:49,589 - INFO - ¼ì²âµ½ÒÑµÇÂ¼×´Ì¬
+2025-03-25 21:48:49,590 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .css-vurnku
+2025-03-25 21:48:54,608 - WARNING - Ñ¡ÔñÆ÷ .css-vurnku Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".css-vurnku") to be visible
+
+2025-03-25 21:48:54,608 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .css-1fd22oq
+2025-03-25 21:48:59,621 - WARNING - Ñ¡ÔñÆ÷ .css-1fd22oq Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".css-1fd22oq") to be visible
+
+2025-03-25 21:48:59,621 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .CreatorHomeLayout-mainColumn
+2025-03-25 21:49:04,626 - WARNING - Ñ¡ÔñÆ÷ .CreatorHomeLayout-mainColumn Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".CreatorHomeLayout-mainColumn") to be visible
+
+2025-03-25 21:49:04,627 - INFO - ³¢ÊÔµÈ´ýÑ¡ÔñÆ÷: .HotQuestions
+2025-03-25 21:49:09,639 - WARNING - Ñ¡ÔñÆ÷ .HotQuestions Î´ÕÒµ½: Page.wait_for_selector: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".HotQuestions") to be visible
+
+2025-03-25 21:49:09,639 - INFO - Ò³Ãæ¼ÓÔØÍê³É
+2025-03-25 21:49:10,661 - INFO - Ò³Ãæ¹ö¶¯ 1/3
+2025-03-25 21:49:10,767 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_1.png
+2025-03-25 21:49:11,776 - INFO - Ò³Ãæ¹ö¶¯ 2/3
+2025-03-25 21:49:11,882 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_2.png
+2025-03-25 21:49:12,894 - INFO - Ò³Ãæ¹ö¶¯ 3/3
+2025-03-25 21:49:13,002 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\scroll_3.png
+2025-03-25 21:49:13,003 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .css-vurnku > .css-1fd22oq
+2025-03-25 21:49:13,008 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .CreatorHotQuestionCard
+2025-03-25 21:49:13,014 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .HotItem
+2025-03-25 21:49:13,021 - INFO - ³¢ÊÔ²éÕÒÎÊÌâ¿¨Æ¬Ñ¡ÔñÆ÷: .Card
+2025-03-25 21:49:13,026 - ERROR - Î´ÕÒµ½ÈÎºÎÎÊÌâ¿¨Æ¬
+2025-03-25 21:49:13,139 - INFO - ½ØÍ¼ÒÑ±£´æ: screenshots\no_cards_found.png
+2025-03-25 21:49:13,139 - INFO - ³¢ÊÔ¼ì²éÒ³ÃæÉÏµÄ»ù±¾ÔªËØ...
+2025-03-25 21:49:13,160 - INFO - BodyÎÄ±¾Æ¬¶Î: ½øÈëÖªºõ
+
+ÏµÍ³¼à²âµ½ÄúµÄÍøÂç»·¾³´æÔÚÒì³££¬Çëµã»÷ÏÂ·½ÑéÖ¤°´Å¥½øÐÐÑéÖ¤¡£ÔÚÄúÑéÖ¤Íê³ÉÇ°£¬¸ÃÌáÊ¾½«¶à´Î³öÏÖ¡£
+
+¿ªÊ¼ÑéÖ¤
+Òâ¼û·´À¡
+ÕýÔÚ¼ÓÔØ£¬ÇëÉÔºóÖØÊÔ...
+2025-03-25 21:49:13,160 - INFO - ÅÀÈ¡Íê³É£¬¹²»ñÈ¡ 0 ¸öÎÊÌâ
+2025-03-25 21:49:13,758 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 21:49:32,572 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 21:49:32,767 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 21:49:32,786 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 21:49:32,786 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 21:51:05,063 - INFO - 127.0.0.1 - - [25/Mar/2025 21:51:05] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:53:15,007 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 21:53:15,215 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 21:53:15,231 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 21:53:15,231 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 21:57:01,676 - INFO - 127.0.0.1 - - [25/Mar/2025 21:57:01] "GET / HTTP/1.1" 200 -
+2025-03-25 21:57:01,707 - INFO - 127.0.0.1 - - [25/Mar/2025 21:57:01] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 21:57:01,714 - INFO - 127.0.0.1 - - [25/Mar/2025 21:57:01] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 21:57:01,715 - INFO - 127.0.0.1 - - [25/Mar/2025 21:57:01] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:00:12,029 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:12] "GET / HTTP/1.1" 200 -
+2025-03-25 22:00:12,056 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:12] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:00:12,066 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:12] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:00:12,069 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:12] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:00:13,048 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET / HTTP/1.1" 200 -
+2025-03-25 22:00:13,075 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:00:13,077 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:00:13,080 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:00:13,855 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET / HTTP/1.1" 200 -
+2025-03-25 22:00:13,881 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:00:13,884 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:00:13,887 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:13] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:00:14,662 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:14] "GET / HTTP/1.1" 200 -
+2025-03-25 22:00:14,691 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:14] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:00:14,698 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:14] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:00:14,700 - INFO - 127.0.0.1 - - [25/Mar/2025 22:00:14] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:05:14,461 - INFO - 127.0.0.1 - - [25/Mar/2025 22:05:14] "GET / HTTP/1.1" 200 -
+2025-03-25 22:05:14,494 - INFO - 127.0.0.1 - - [25/Mar/2025 22:05:14] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:05:14,498 - INFO - 127.0.0.1 - - [25/Mar/2025 22:05:14] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:05:14,507 - INFO - 127.0.0.1 - - [25/Mar/2025 22:05:14] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:21:14,325 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:21:14,529 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:21:14,546 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:21:14,547 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:22:04,380 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:22:04,584 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:22:04,604 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:22:04,604 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:22:33,713 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:33] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:33,747 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:33] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:33,755 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:33] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:33,756 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:33] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:34,917 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:34] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:34,946 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:34] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:34,949 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:34] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:34,950 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:34] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:35,139 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:35,165 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:35,168 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:35,169 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:35,748 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:35,779 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:35,781 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:35,782 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:35] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:36,028 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:36,055 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:36,061 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:36,062 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:36,275 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:36,302 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:36,308 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:36,309 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:36] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:22:40,936 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:40] "GET / HTTP/1.1" 200 -
+2025-03-25 22:22:40,967 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:40] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:22:40,970 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:40] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:22:40,970 - INFO - 127.0.0.1 - - [25/Mar/2025 22:22:40] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:23:27,276 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:27] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:23:27,382 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-25 22:23:33,393 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:33] "GET / HTTP/1.1" 200 -
+2025-03-25 22:23:33,419 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:33] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:23:33,426 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:33] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:23:33,427 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:33] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:23:34,357 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:34] "GET / HTTP/1.1" 200 -
+2025-03-25 22:23:34,382 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:34] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:23:34,385 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:34] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:23:34,386 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:34] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:23:38,378 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:38] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:23:39,433 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:39] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:23:39,976 - INFO - 127.0.0.1 - - [25/Mar/2025 22:23:39] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:28:45,177 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:28:45,401 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:28:45,422 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:28:45,422 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:29:10,736 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:10] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:29:14,901 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:14] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:29:15,128 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:15] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:29:15,344 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:15] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:29:18,368 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET / HTTP/1.1" 200 -
+2025-03-25 22:29:18,395 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:29:18,402 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:29:18,404 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:29:18,603 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET / HTTP/1.1" 200 -
+2025-03-25 22:29:18,654 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:29:18,655 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:29:18,656 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:18] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:29:19,140 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET / HTTP/1.1" 200 -
+2025-03-25 22:29:19,171 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:29:19,173 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:29:19,174 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:29:19,314 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET / HTTP/1.1" 200 -
+2025-03-25 22:29:19,339 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:29:19,342 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:29:19,343 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:29:19,546 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET / HTTP/1.1" 200 -
+2025-03-25 22:29:19,575 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:29:19,579 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:29:19,581 - INFO - 127.0.0.1 - - [25/Mar/2025 22:29:19] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:34:27,650 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:34:27,949 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:34:27,964 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:34:27,965 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:34:36,985 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:36] "GET / HTTP/1.1" 200 -
+2025-03-25 22:34:37,017 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:37] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:34:37,021 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:37] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:34:37,023 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:37] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:34:41,217 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:41] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:34:42,191 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:42] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:34:45,319 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:45] "GET / HTTP/1.1" 200 -
+2025-03-25 22:34:45,348 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:45] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:34:45,353 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:45] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:34:45,354 - INFO - 127.0.0.1 - - [25/Mar/2025 22:34:45] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:38:47,604 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:38:47,801 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:38:47,817 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:38:47,818 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:38:54,768 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:54] "GET / HTTP/1.1" 200 -
+2025-03-25 22:38:54,801 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:54] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:38:54,804 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:54] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:38:54,805 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:54] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:38:55,606 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:55] "GET / HTTP/1.1" 200 -
+2025-03-25 22:38:55,636 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:55] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:38:55,639 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:55] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:38:55,644 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:55] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:38:59,327 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:59] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:38:59,729 - INFO - 127.0.0.1 - - [25/Mar/2025 22:38:59] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:43:46,021 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 22:43:46,023 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 22:43:46.023575
+2025-03-25 22:43:46,023 - INFO - ä¯ÀÀÆ÷¿ÉÊÓ»¯Ä£Ê½: ÆôÓÃ
+2025-03-25 22:43:46,023 - INFO - ³õÊ¼»¯ÖªºõÈÈÃÅÎÊÌâÅÀ³æ£¬Ä¿±êURL: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:43:46,023 - INFO - Ê¹ÓÃÓÃ»§´úÀí: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+2025-03-25 22:43:46,025 - INFO - ä¯ÀÀÆ÷¿ÉÊÓÄ£Ê½: ¿ªÆô
+2025-03-25 22:43:47,092 - INFO - ÕýÔÚ·ÃÎÊ: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:43:49,704 - WARNING - Ò³ÃæÄÚÈÝÖÐ°üº¬ÑéÖ¤Ïà¹ØÎÄ±¾
+2025-03-25 22:43:49,716 - INFO - ÕÒµ½ 0 ¸ö h1 ÔªËØ
+2025-03-25 22:43:49,736 - INFO - ÕÒµ½ 25 ¸ö a ÔªËØ
+2025-03-25 22:43:49,780 - INFO - ÕÒµ½ 60 ¸ö div ÔªËØ
+2025-03-25 22:43:49,791 - INFO - ÕÒµ½ 6 ¸ö span ÔªËØ
+2025-03-25 22:43:49,800 - INFO - ÕÒµ½ 5 ¸ö img ÔªËØ
+2025-03-25 22:43:49,839 - INFO - ³É¹¦ÕÒµ½Ñ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:43:52,165 - INFO - ¿ªÊ¼¹ö¶¯Ò³Ãæ...
+2025-03-25 22:43:52,170 - INFO - ³õÊ¼Ò³Ãæ¸ß¶È: 1080
+2025-03-25 22:43:52,171 - INFO - Ö´ÐÐµÚ 1/5 ´Î¹ö¶¯
+2025-03-25 22:43:52,176 - INFO - µÈ´ý 1.83 Ãë...
+2025-03-25 22:43:54,042 - INFO - Ö´ÐÐµÚ 2/5 ´Î¹ö¶¯
+2025-03-25 22:43:54,047 - INFO - µÈ´ý 1.81 Ãë...
+2025-03-25 22:43:56,149 - INFO - Ö´ÐÐµÚ 3/5 ´Î¹ö¶¯
+2025-03-25 22:43:56,154 - INFO - µÈ´ý 2.84 Ãë...
+2025-03-25 22:43:59,028 - INFO - Ö´ÐÐµÚ 4/5 ´Î¹ö¶¯
+2025-03-25 22:43:59,034 - INFO - µÈ´ý 3.00 Ãë...
+2025-03-25 22:44:02,288 - INFO - ¹ö¶¯ºóÒ³Ãæ¸ß¶ÈÎ´±ä»¯£¬¿ÉÄÜÒÑ¾­µ½´ïµ×²¿
+2025-03-25 22:44:03,531 - INFO - Ò³Ãæ¹ö¶¯Íê³É
+2025-03-25 22:44:03,532 - INFO - ¿ªÊ¼ÌáÈ¡ÎÊÌâÊý¾Ý
+2025-03-25 22:44:03,532 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestionsItem
+2025-03-25 22:44:03,538 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestionsItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,539 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestions-item
+2025-03-25 22:44:03,544 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestions-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,545 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.HotListCard-item
+2025-03-25 22:44:03,550 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.HotListCard-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,550 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.AnswerCard
+2025-03-25 22:44:03,557 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.AnswerCard ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,557 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .QuestionItem
+2025-03-25 22:44:03,563 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .QuestionItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,563 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:44:03,572 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .css-vurnku ÕÒµ½ 1 ¸ö¿¨Æ¬
+2025-03-25 22:44:03,579 - INFO - ³É¹¦ÌáÈ¡ 0 ¸öÎÊÌâ
+2025-03-25 22:44:03,579 - WARNING - Î´ÕÒµ½ÎÊÌâÊý¾Ý£¬¼ì²éÊÇ·ñÓÐÑéÖ¤Âë
+2025-03-25 22:44:03,836 - WARNING - Î´ÅÀÈ¡µ½ÈÎºÎÎÊÌâ
+2025-03-25 22:44:04,060 - INFO - ¸üÐÂÁË 14 ¸öcookies
+2025-03-25 22:44:04,565 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 22:44:12,205 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 22:44:12,207 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 22:44:12.207370
+2025-03-25 22:44:12,207 - INFO - ä¯ÀÀÆ÷¿ÉÊÓ»¯Ä£Ê½: ÆôÓÃ
+2025-03-25 22:44:12,207 - INFO - ³õÊ¼»¯ÖªºõÈÈÃÅÎÊÌâÅÀ³æ£¬Ä¿±êURL: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:44:12,208 - INFO - Ê¹ÓÃÓÃ»§´úÀí: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+2025-03-25 22:44:12,208 - INFO - ä¯ÀÀÆ÷¿ÉÊÓÄ£Ê½: ¿ªÆô
+2025-03-25 22:44:13,198 - INFO - ÕýÔÚ·ÃÎÊ: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:44:23,238 - WARNING - Ò³ÃæÄÚÈÝÖÐ°üº¬ÑéÖ¤Ïà¹ØÎÄ±¾
+2025-03-25 22:44:23,247 - INFO - ÕÒµ½ 0 ¸ö h1 ÔªËØ
+2025-03-25 22:44:23,267 - INFO - ÕÒµ½ 24 ¸ö a ÔªËØ
+2025-03-25 22:44:23,300 - INFO - ÕÒµ½ 50 ¸ö div ÔªËØ
+2025-03-25 22:44:23,319 - INFO - ÕÒµ½ 8 ¸ö span ÔªËØ
+2025-03-25 22:44:23,328 - INFO - ÕÒµ½ 3 ¸ö img ÔªËØ
+2025-03-25 22:44:23,372 - INFO - ³É¹¦ÕÒµ½Ñ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:44:23,407 - INFO - ¿ªÊ¼¹ö¶¯Ò³Ãæ...
+2025-03-25 22:44:23,413 - INFO - ³õÊ¼Ò³Ãæ¸ß¶È: 836
+2025-03-25 22:44:23,413 - INFO - Ö´ÐÐµÚ 1/5 ´Î¹ö¶¯
+2025-03-25 22:44:23,418 - INFO - µÈ´ý 2.80 Ãë...
+2025-03-25 22:44:26,242 - INFO - Ö´ÐÐµÚ 2/5 ´Î¹ö¶¯
+2025-03-25 22:44:26,246 - INFO - µÈ´ý 1.87 Ãë...
+2025-03-25 22:44:28,348 - INFO - Ö´ÐÐµÚ 3/5 ´Î¹ö¶¯
+2025-03-25 22:44:28,352 - INFO - µÈ´ý 2.85 Ãë...
+2025-03-25 22:44:31,245 - ERROR - ¹ö¶¯Ò³ÃæÊ±³ö´í: Page.evaluate: TypeError: Cannot read properties of null (reading 'scrollHeight')
+    at eval (eval at evaluate (:234:30), <anonymous>:1:15)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-25 22:44:31,246 - ERROR - Traceback (most recent call last):
+  File "D:\workspace\dynamic-web-scrawlers\scraper\crawler.py", line 201, in scroll_page
+    new_height = await page.evaluate('document.body.scrollHeight')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\async_api\_generated.py", line 8509, in evaluate
+    await self._impl_obj.evaluate(
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_page.py", line 468, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_frame.py", line 278, in evaluate
+    await self._channel.send(
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of null (reading 'scrollHeight')
+    at eval (eval at evaluate (:234:30), <anonymous>:1:15)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+
+2025-03-25 22:44:31,248 - INFO - ¿ªÊ¼ÌáÈ¡ÎÊÌâÊý¾Ý
+2025-03-25 22:44:31,249 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestionsItem
+2025-03-25 22:44:31,254 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestionsItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,255 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestions-item
+2025-03-25 22:44:31,261 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestions-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,261 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.HotListCard-item
+2025-03-25 22:44:31,267 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.HotListCard-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,268 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.AnswerCard
+2025-03-25 22:44:31,274 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.AnswerCard ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,274 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .QuestionItem
+2025-03-25 22:44:31,281 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .QuestionItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,282 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:44:31,288 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .css-vurnku ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,289 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: div[role='listitem']
+2025-03-25 22:44:31,295 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ div[role='listitem'] ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,295 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card
+2025-03-25 22:44:31,300 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,301 - WARNING - Î´ÕÒµ½ÈÎºÎ¿¨Æ¬£¬³¢ÊÔÊ¹ÓÃXPath
+2025-03-25 22:44:31,307 - INFO - Ê¹ÓÃXPath //div[contains(@class, 'Card')] ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,311 - INFO - Ê¹ÓÃXPath //div[contains(@class, 'Question')] ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,324 - INFO - Ê¹ÓÃXPath //div[contains(@class, 'List')]/div ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,330 - INFO - Ê¹ÓÃXPath //div[contains(@class, 'HotQuestions')]/div ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:44:31,330 - WARNING - Î´ÕÒµ½ÈÎºÎ¿¨Æ¬£¬³¢ÊÔ·ÖÎöÒ³ÃæHTML
+2025-03-25 22:44:31,336 - INFO - ´ÓHTMLÖÐÕÒµ½ 0 ¸öÎÊÌâID
+2025-03-25 22:44:31,337 - INFO - ³É¹¦ÌáÈ¡ 0 ¸öÎÊÌâ
+2025-03-25 22:44:31,337 - WARNING - Î´ÕÒµ½ÎÊÌâÊý¾Ý£¬¼ì²éÊÇ·ñÓÐÑéÖ¤Âë
+2025-03-25 22:44:38,947 - WARNING - Î´ÅÀÈ¡µ½ÈÎºÎÎÊÌâ
+2025-03-25 22:44:39,107 - INFO - ¸üÐÂÁË 7 ¸öcookies
+2025-03-25 22:44:39,606 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 22:45:07,732 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 22:45:07,733 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 22:45:07.733369
+2025-03-25 22:45:07,734 - INFO - ä¯ÀÀÆ÷¿ÉÊÓ»¯Ä£Ê½: ÆôÓÃ
+2025-03-25 22:45:07,734 - INFO - ³õÊ¼»¯ÖªºõÈÈÃÅÎÊÌâÅÀ³æ£¬Ä¿±êURL: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:45:07,734 - INFO - Ê¹ÓÃÓÃ»§´úÀí: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36
+2025-03-25 22:45:07,735 - INFO - ä¯ÀÀÆ÷¿ÉÊÓÄ£Ê½: ¿ªÆô
+2025-03-25 22:45:08,792 - INFO - ÕýÔÚ·ÃÎÊ: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:45:13,454 - ERROR - ÅÀÈ¡¹ý³ÌÖÐ·¢Éú´íÎó: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.zhihu.com/creator/hot-question/hot/0/hour
+Call log:
+  - navigating to "https://www.zhihu.com/creator/hot-question/hot/0/hour", waiting until "load"
+
+2025-03-25 22:45:13,456 - ERROR - Traceback (most recent call last):
+  File "D:\workspace\dynamic-web-scrawlers\scraper\crawler.py", line 486, in scrape
+    await page.goto(self.url)
+  File "D:\anaconda3\Lib\site-packages\playwright\async_api\_generated.py", line 8987, in goto
+    await self._impl_obj.goto(
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.zhihu.com/creator/hot-question/hot/0/hour
+Call log:
+  - navigating to "https://www.zhihu.com/creator/hot-question/hot/0/hour", waiting until "load"
+
+
+2025-03-25 22:45:13,459 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 22:45:23,321 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 22:45:23,323 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 22:45:23.323055
+2025-03-25 22:45:23,323 - INFO - ä¯ÀÀÆ÷¿ÉÊÓ»¯Ä£Ê½: ÆôÓÃ
+2025-03-25 22:45:23,323 - INFO - ³õÊ¼»¯ÖªºõÈÈÃÅÎÊÌâÅÀ³æ£¬Ä¿±êURL: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:45:23,323 - INFO - Ê¹ÓÃÓÃ»§´úÀí: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15
+2025-03-25 22:45:23,324 - INFO - ä¯ÀÀÆ÷¿ÉÊÓÄ£Ê½: ¿ªÆô
+2025-03-25 22:45:24,345 - INFO - ÕýÔÚ·ÃÎÊ: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:45:28,874 - ERROR - ÅÀÈ¡¹ý³ÌÖÐ·¢Éú´íÎó: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.zhihu.com/creator/hot-question/hot/0/hour
+Call log:
+  - navigating to "https://www.zhihu.com/creator/hot-question/hot/0/hour", waiting until "load"
+
+2025-03-25 22:45:28,877 - ERROR - Traceback (most recent call last):
+  File "D:\workspace\dynamic-web-scrawlers\scraper\crawler.py", line 486, in scrape
+    await page.goto(self.url)
+  File "D:\anaconda3\Lib\site-packages\playwright\async_api\_generated.py", line 8987, in goto
+    await self._impl_obj.goto(
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_frame.py", line 145, in goto
+    await self._channel.send("goto", locals_to_params(locals()))
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_CLOSED at https://www.zhihu.com/creator/hot-question/hot/0/hour
+Call log:
+  - navigating to "https://www.zhihu.com/creator/hot-question/hot/0/hour", waiting until "load"
+
+
+2025-03-25 22:45:28,880 - WARNING - Ã»ÓÐ»ñÈ¡µ½ÎÊÌâÊý¾Ý
+2025-03-25 22:46:16,464 - INFO - Ö»Ö´ÐÐÒ»´ÎÅÀÈ¡ÈÎÎñ
+2025-03-25 22:46:16,466 - INFO - ¿ªÊ¼Ö´ÐÐÅÀÈ¡ÈÎÎñ: 2025-03-25 22:46:16.466832
+2025-03-25 22:46:16,466 - INFO - ä¯ÀÀÆ÷¿ÉÊÓ»¯Ä£Ê½: ÆôÓÃ
+2025-03-25 22:46:16,467 - INFO - ³õÊ¼»¯ÖªºõÈÈÃÅÎÊÌâÅÀ³æ£¬Ä¿±êURL: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:46:16,467 - INFO - Ê¹ÓÃÓÃ»§´úÀí: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0
+2025-03-25 22:46:16,467 - INFO - ä¯ÀÀÆ÷¿ÉÊÓÄ£Ê½: ¿ªÆô
+2025-03-25 22:46:17,503 - INFO - ÕýÔÚ·ÃÎÊ: https://www.zhihu.com/creator/hot-question/hot/0/hour
+2025-03-25 22:46:20,152 - WARNING - Ò³ÃæÄÚÈÝÖÐ°üº¬ÑéÖ¤Ïà¹ØÎÄ±¾
+2025-03-25 22:46:20,169 - INFO - ÕÒµ½ 0 ¸ö h1 ÔªËØ
+2025-03-25 22:46:20,190 - INFO - ÕÒµ½ 25 ¸ö a ÔªËØ
+2025-03-25 22:46:20,228 - INFO - ÕÒµ½ 60 ¸ö div ÔªËØ
+2025-03-25 22:46:20,237 - INFO - ÕÒµ½ 6 ¸ö span ÔªËØ
+2025-03-25 22:46:20,246 - INFO - ÕÒµ½ 5 ¸ö img ÔªËØ
+2025-03-25 22:46:20,281 - INFO - ³É¹¦ÕÒµ½Ñ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:46:22,816 - INFO - ¿ªÊ¼¹ö¶¯Ò³Ãæ...
+2025-03-25 22:46:22,822 - INFO - ³õÊ¼Ò³Ãæ¸ß¶È: 1080
+2025-03-25 22:46:22,823 - INFO - Ö´ÐÐµÚ 1/5 ´Î¹ö¶¯
+2025-03-25 22:46:22,827 - INFO - µÈ´ý 2.53 Ãë...
+2025-03-25 22:46:25,940 - INFO - Ö´ÐÐµÚ 2/5 ´Î¹ö¶¯
+2025-03-25 22:46:25,945 - INFO - µÈ´ý 2.49 Ãë...
+2025-03-25 22:46:28,829 - INFO - Ö´ÐÐµÚ 3/5 ´Î¹ö¶¯
+2025-03-25 22:46:28,833 - INFO - µÈ´ý 1.11 Ãë...
+2025-03-25 22:46:29,980 - INFO - Ö´ÐÐµÚ 4/5 ´Î¹ö¶¯
+2025-03-25 22:46:29,987 - INFO - µÈ´ý 2.47 Ãë...
+2025-03-25 22:46:32,696 - INFO - ¹ö¶¯ºóÒ³Ãæ¸ß¶ÈÎ´±ä»¯£¬¿ÉÄÜÒÑ¾­µ½´ïµ×²¿
+2025-03-25 22:46:33,899 - INFO - Ò³Ãæ¹ö¶¯Íê³É
+2025-03-25 22:46:33,899 - INFO - ¿ªÊ¼ÌáÈ¡ÎÊÌâÊý¾Ý
+2025-03-25 22:46:33,900 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestionsItem
+2025-03-25 22:46:33,907 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestionsItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:46:33,907 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .HotQuestions-item
+2025-03-25 22:46:33,914 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .HotQuestions-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:46:33,915 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.HotListCard-item
+2025-03-25 22:46:33,921 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.HotListCard-item ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:46:33,922 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .Card.AnswerCard
+2025-03-25 22:46:33,930 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .Card.AnswerCard ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:46:33,930 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .QuestionItem
+2025-03-25 22:46:33,936 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .QuestionItem ÕÒµ½ 0 ¸ö¿¨Æ¬
+2025-03-25 22:46:33,937 - INFO - ³¢ÊÔÊ¹ÓÃÑ¡ÔñÆ÷: .css-vurnku
+2025-03-25 22:46:33,980 - INFO - Ê¹ÓÃÑ¡ÔñÆ÷ .css-vurnku ÕÒµ½ 105 ¸ö¿¨Æ¬
+2025-03-25 22:46:39,069 - INFO - ³É¹¦ÌáÈ¡ 51 ¸öÎÊÌâ
+2025-03-25 22:46:39,070 - INFO - ³É¹¦ÅÀÈ¡µ½ 51 ¸öÎÊÌâ
+2025-03-25 22:46:39,261 - INFO - ¸üÐÂÁË 16 ¸öcookies
+2025-03-25 22:46:39,726 - ERROR - ±£´æÎÊÌâÊý¾ÝÊ§°Ü: Cannot operate on a closed database.
+2025-03-25 22:46:39,726 - ERROR - ÅÀÈ¡ÈÎÎñÖ´ÐÐÊ§°Ü: Cannot operate on a closed database.
+2025-03-25 22:46:49,750 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:49] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:49,781 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:49] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:49,784 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:49] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:49,785 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:49] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:50,759 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:50] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:50,786 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:50] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:50,793 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:50] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:50,794 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:50] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:51,224 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:51,248 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:51,251 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:51,252 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:51,441 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:51,473 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:51,476 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:51,477 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:51,629 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:51,654 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:51,662 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:51,663 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:51,829 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:51,854 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:51,861 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:51,862 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:52,052 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:52,083 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:52,086 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:52,087 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:52,272 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:52,300 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:52,303 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:52,304 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:52,496 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:52,528 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:52,535 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:52,536 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:52,743 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:52,770 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:52,777 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:52,778 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:52,980 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:52] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:53,003 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:53,011 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:53,015 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:53,207 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:53,233 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:53,237 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:53,237 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:53,453 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:53,481 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:53,484 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:53,485 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:53,685 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:53,714 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:53,719 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:53,721 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:53,907 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:53,938 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:53,943 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:53,944 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:53] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:54,522 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:54,556 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:54,556 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:54,559 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:54,747 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET / HTTP/1.1" 200 -
+2025-03-25 22:46:54,773 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:46:54,787 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:46:54,792 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:54] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:46:58,592 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:58] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:46:59,474 - INFO - 127.0.0.1 - - [25/Mar/2025 22:46:59] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:50:13,828 - INFO - 127.0.0.1 - - [25/Mar/2025 22:50:13] "GET / HTTP/1.1" 200 -
+2025-03-25 22:50:13,856 - INFO - 127.0.0.1 - - [25/Mar/2025 22:50:13] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:50:13,859 - INFO - 127.0.0.1 - - [25/Mar/2025 22:50:13] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:50:13,864 - INFO - 127.0.0.1 - - [25/Mar/2025 22:50:13] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:52:06,412 - INFO - 127.0.0.1 - - [25/Mar/2025 22:52:06] "GET /api/questions HTTP/1.1" 200 -
+2025-03-25 22:52:28,308 - INFO - 127.0.0.1 - - [25/Mar/2025 22:52:28] "GET / HTTP/1.1" 200 -
+2025-03-25 22:52:30,230 - INFO - 127.0.0.1 - - [25/Mar/2025 22:52:30] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 22:52:30,233 - INFO - 127.0.0.1 - - [25/Mar/2025 22:52:30] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 22:52:30,531 - INFO - 127.0.0.1 - - [25/Mar/2025 22:52:30] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 22:53:33,352 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:53:33,567 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:53:33,584 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:53:33,584 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:54:01,098 - INFO - 127.0.0.1 - - [25/Mar/2025 22:54:01] "[33mGET /api/data HTTP/1.1[0m" 404 -
+2025-03-25 22:54:17,957 - INFO - 127.0.0.1 - - [25/Mar/2025 22:54:17] "GET /api/questions HTTP/1.1" 200 -
+2025-03-25 22:54:52,621 - INFO - 127.0.0.1 - - [25/Mar/2025 22:54:52] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:55:48,881 - INFO - 127.0.0.1 - - [25/Mar/2025 22:55:48] "[33mGET /api/data HTTP/1.1[0m" 404 -
+2025-03-25 22:56:20,858 - INFO - 127.0.0.1 - - [25/Mar/2025 22:56:20] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:56:30,491 - INFO - 127.0.0.1 - - [25/Mar/2025 22:56:30] "[33mGET /api/data HTTP/1.1[0m" 404 -
+2025-03-25 22:56:58,303 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 22:56:58,528 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 22:56:58,548 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 22:56:58,549 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 22:57:19,075 - INFO - 127.0.0.1 - - [25/Mar/2025 22:57:19] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:57:55,447 - INFO - 127.0.0.1 - - [25/Mar/2025 22:57:55] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 22:57:55,694 - INFO - 127.0.0.1 - - [25/Mar/2025 22:57:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-25 23:00:10,342 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 23:00:10,549 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 23:00:10,568 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 23:00:10,569 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 23:00:51,495 - INFO - 127.0.0.1 - - [25/Mar/2025 23:00:51] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 23:00:55,223 - INFO - 127.0.0.1 - - [25/Mar/2025 23:00:55] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 23:01:09,209 - INFO - 127.0.0.1 - - [25/Mar/2025 23:01:09] "[33mGET /view HTTP/1.1[0m" 404 -
+2025-03-25 23:03:54,839 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 23:03:55,038 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 23:03:55,059 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 23:03:55,060 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-25 23:04:12,098 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:12] "[33mGET /api/update HTTP/1.1[0m" 404 -
+2025-03-25 23:04:39,526 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:39] "[33mGET /view HTTP/1.1[0m" 404 -
+2025-03-25 23:04:45,777 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:45] "GET / HTTP/1.1" 200 -
+2025-03-25 23:04:47,489 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:47] "GET /api/questions?page=1&limit=10 HTTP/1.1" 200 -
+2025-03-25 23:04:47,490 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:47] "GET /api/status HTTP/1.1" 200 -
+2025-03-25 23:04:47,792 - INFO - 127.0.0.1 - - [25/Mar/2025 23:04:47] "GET /api/config HTTP/1.1" 200 -
+2025-03-25 23:06:09,750 - INFO - Ö»Æô¶¯Web·þÎñ
+2025-03-25 23:06:10,003 - INFO - Æô¶¯Web·þÎñ£¬¼àÌý¶Ë¿Ú: 5000
+2025-03-25 23:06:10,022 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.5.23:5000
+2025-03-25 23:06:10,023 - INFO - [33mPress CTRL+C to quit[0m

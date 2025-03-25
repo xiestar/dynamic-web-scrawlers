@@ -1,0 +1,5 @@
+playwright==1.42.0
+pytest-playwright==0.4.3
+flask==2.3.3
+apscheduler==3.10.4
+python-dotenv==1.0.0 
